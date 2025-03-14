@@ -12,6 +12,7 @@ window.addEventListener('scroll', function(){
 
 // Carrosselel 
 const comments = document.querySelectorAll('.comment');
+let commentAtual = Math.floor(Math.random() * comments.length);
 
 function mostrarSlide(index) {
     comments.forEach((comment, i) => {
@@ -19,13 +20,18 @@ function mostrarSlide(index) {
     });
 }
 
-function escolherAleatorio() {
-    const randomIndex = Math.floor(Math.random() * comments.length);
-    mostrarSlide(randomIndex);
+function proximo() {
+    commentAtual = (commentAtual + 1) % comments.length;
+    mostrarSlide(commentAtual);
 }
 
-document.querySelector('.anterior').addEventListener('click', escolherAleatorio);
-document.querySelector('.proximo').addEventListener('click', escolherAleatorio);
+function anterior() {
+    commentAtual = (commentAtual - 1 + comments.length) % comments.length;
+    mostrarSlide(commentAtual);
+}
 
-// Mostra um estudante aleatório ao carregar a página
-escolherAleatorio();
+document.querySelector('.anterior').addEventListener('click', anterior);
+document.querySelector('.proximo').addEventListener('click', proximo);
+
+// Mostra um comentário aleatório ao carregar a página
+mostrarSlide(commentAtual);
