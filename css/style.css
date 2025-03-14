@@ -1,0 +1,1031 @@
+/* Imports as fontes Poppins e Lobster (Google Fontes) */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* Definição de variáveis  */
+:root{
+    /* Fonte  */
+    --fonte-principal: "Poppins", sans-serif;
+
+    /* Paleta de cores  */
+    --cor-principal: #2d2d2e;
+    --cor-navbar:#1c1818;
+    --cor-agendar:#36f549;
+
+    --cor-destaque: #ffad32;
+    --cor-destaque-hover: #fdcb7f;
+
+    --cor-gradiente-01: #2e2d2d;
+    --cor-gradiente-02: #1d1415;
+    --cor-1:#f9f9f9;
+    --cor-2:#b8c0c7;
+    --cor-3:#767f86;
+    --cor-4:#3c4852;
+    --cor-5:#00000043;
+    --cor-rodape:#080606;
+
+    /* box shadow  */
+    --sombra: 0 0.3rem 0.4rem 0.1rem var(--cor-5);
+}
+
+/* Limpa as configurações padrão dos navegadores  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html{
+    font-family: var(--fonte-principal);
+    font-size: 18px;
+}
+
+body{
+    background-color: var(--cor-principal);
+    color: var(--cor-4);
+}
+
+/* Barra de navegação fixa, com Menu  */
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* transition: background-color 0.5s ease; */
+
+    background-color: var(--cor-navbar);
+    padding: 0.6rem 3rem;
+    color: var(--cor-1);
+    letter-spacing: 0.1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+.navbar{
+    background-color: var(--cor-navbar);
+}
+
+.logo{
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+}
+
+.logotipo img{
+    width: 40px;
+    border-radius: 50%;
+    margin-top: .5rem;
+    padding: 0;
+}
+
+.menu a, .drop-content a{
+    text-decoration: none;
+    color: var(--cor-1);
+    font-weight: 700;
+    padding: 0.6rem 1rem;
+    transition: 0.5s;
+
+}
+
+.menu a:hover, .drop-content a:hover{
+    color: var(--cor-destaque);
+}
+
+/* Barra e alendário  */
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('../img/banner.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 90vh;
+}
+
+header div{
+    width: 100%;
+}
+
+.title {
+    margin-top: 8rem;
+    margin-bottom: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: var(--cor-1);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.5rem;
+    text-shadow: 0.2rem 0 0.2rem var(--cor-4);
+}
+
+.title span{
+    font-size: small;
+    font-weight: 100;
+    text-shadow: none;
+}
+
+.emphasis{
+    margin-top: 0;
+    padding: 0.8rem 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    background-color: var(--cor-agendar);
+    color: var(--cor-1);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 9rem;
+    padding: 0.6rem 1.6rem;
+    border: var(--cor-1);
+    border-radius: 5rem;
+    transition: 0.3s ease;
+}
+
+button:hover{
+    background-color: var(--cor-principal);
+    color: var(--cor-agendar);
+    cursor: pointer;
+}
+
+section{
+    margin: 2.5rem;
+    padding: 6rem 3rem;
+}
+
+/*Section sobre  */
+.about{
+    display: flex;
+}
+
+.botao-topo{
+    width: 20px;
+    height: 30px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--cor-1);
+    border-radius: 8%;
+    text-decoration: none;
+    padding-left: 4px;
+    font-size: 24px;
+}
+
+.botao-topo:hover{
+    background-color: var(--cor-2);
+    color: var(--cor-1);
+}
+
+.about h1{
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-1);
+}
+
+.about hr{
+    margin: 1rem;
+    border: solid var(--cor-3);
+    border-radius: 1rem;
+    width: 14rem;
+}
+
+.about p{
+    margin: 1rem 0;
+    color: var(--cor-1);
+    text-align: start;
+}
+
+.info-about{
+    display: flex;
+    flex-direction: column;
+}
+
+.fotos-about{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex: 1;
+}
+
+.foto{
+    width: calc(50% - 0.5rem);
+    border: solid 0.6rem var(--cor-1);
+    box-shadow: var(--sombra);
+}
+
+.foto img{
+    width: 100%;
+    display: flex;
+}
+
+/*Section modalidades  */
+.modalities{
+    background: linear-gradient(
+        50deg,
+        var(--cor-gradiente-01),
+        var(--cor-gradiente-02)
+    );
+}
+
+.group-modalities{
+    padding: 0rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 3rem 1.2rem;
+}
+
+.modalities h1{
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-1);
+    text-align: center;
+    margin-bottom: 4rem;
+    padding-top: 0;
+}
+
+.card-modality{
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-principal);
+    border-radius: 0.5rem;
+    box-shadow: var(--sombra);
+}
+
+.card-modality img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+}
+
+.card-modality > div{
+    padding: 1rem 1rem 1rem 0rem;
+}
+
+.card-modality span{
+    color: var(--cor-1);
+    font-size: medium;
+    font-weight: 700;
+}
+
+.card-modality p{
+    text-align: justify;
+    color: var(--cor-1);
+    font-size: small;
+}
+
+/*Section avaliações  */
+.reviews{
+    text-align: center;
+    width: 75%;
+    min-height: 50vh;
+    margin: 1rem auto;
+    padding: 6rem 3rem  2rem;
+}
+
+.reviews h1{
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-agendar);
+}
+
+.reviews p{
+    margin: 1rem auto;
+    color: var(--cor-1);
+}
+
+.reviews img{
+    border: solid 0.2rem var(--cor-destaque);
+    border-radius: 50%;
+    background-color: var(--cor-destaque);
+    outline: none;
+    width: 10rem;
+}
+
+.reviews span{
+    font-weight: 700;
+}
+
+.carousel{
+    position: relative;
+    padding: 0 5rem;
+    margin: auto;
+}
+
+.carousel button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--cor-5);
+    color: var(--cor-1);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: 0.3s;
+}
+
+.carousel button:hover{
+    background-color: var(--cor-3);
+}
+
+.anterior{
+    left: 0;
+}
+
+.proximo{
+    right: 0;
+}
+
+/* Horarios  */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+}
+
+table td, table th{
+    border: 1px solid var(--cor-destaque);
+    color: var(--cor-3);
+    padding: 5px;   
+}
+
+.x{
+    text-align: center;
+    color: var(--cor-destaque);
+    font-size: x-large;
+}
+
+caption{
+    color: var(--cor-agendar);
+    caption-side: top;
+    font-size: large;
+    margin-bottom: 1rem;
+}
+
+thead{
+    color: var(--cor-2);
+    background-color: var();
+}
+
+p{
+    color: var(--cor-1);
+    font-size: medium;
+    text-align: center;
+    justify-items: center;
+}
+
+/* Preço  */
+.pricing{
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pricing h1{
+    margin-top: 0;
+    margin-bottom: 3rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: var(--cor-1);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.5rem;
+    text-shadow: 0.2rem 0 0.2rem var(--cor-4);
+}
+
+.saiba-mais:hover{
+    background-color: var(--cor-navbar);
+}
+
+/* Professores  */
+.teachers{
+    background: linear-gradient(
+        50deg,
+        var(--cor-gradiente-01),
+        var(--cor-gradiente-02)
+    );
+}
+
+.teachers h1{
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-1);
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+.group-teachers{
+    padding: 0rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 3rem 1.2rem;
+}
+
+.card-teacher{
+    padding: 0.8rem;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--cor-principal);
+    border-radius: 0.5rem;
+    box-shadow: var(--sombra);
+}
+
+.card-teacher > div{
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.self-teacher{
+    height: 18rem;
+    width: 13rem;
+    border-radius: .3rem;
+}
+
+.card-teacher p{
+    margin-top: 1rem;
+    text-align: justify;
+    color: var(--cor-1);
+}
+
+.card-teacher span{
+    color: var(--cor-1);
+    font-size: 1.2rem;
+    font-weight: 700;
+    flex-direction: row;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.5rem;
+}
+
+/* Rodapé  */
+footer{
+    background-color: var(--cor-4);
+    color: var(--cor-2);
+    display: flex;
+    font-size: 0.8rem;
+}
+
+footer div{
+    flex: 1;
+    padding: 0 0.3rem;
+}
+
+footer h3{
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.enterprise{
+    color: var(--cor-1);
+}
+
+.enterprise p{
+    margin: 2rem;
+}
+
+.enterprise span{
+    font-weight: 700;
+    display: block;
+}
+
+.social-network{
+    color: var(--cor-1);
+    display: flex;
+    gap: 1rem;
+}
+
+.social-network i{
+    color: var(--cor-1);
+    margin-left: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    border: solid 0.15rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-network i:hover{
+    color: var(--cor-destaque);
+}
+
+.baseboard{
+    width: 100%;
+    height: 3rem;
+    background-color: var(--cor-rodape);
+}
+
+/* Menu Hamburguer  */
+.drop-menu{
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.drop-button{
+    padding: 0;
+    padding-bottom: 0.25rem;
+    background-color: inherit;
+}
+
+.bar{
+    width: 2rem;
+    height: 0.28rem;
+    transition: 0.3s;
+    margin-top: 0.3rem;
+    border-radius: 0.2rem;
+    background-color: var(--cor-1);
+}
+
+.drop-content{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 3rem;
+    right: 0;
+    box-shadow: var(--sombra);
+}
+
+.drop-content a{
+    display: block;
+}
+
+.drop-content a:hover{
+    color: var(--cor-destaque);
+}
+
+.drop-menu:hover .drop-content{
+    display: block;
+}
+
+.baseboard p{
+    align-items: center;
+    padding: .5rem;
+    color: var(--cor-2);
+}
+
+/* Media Queries  */
+
+/* Extra Small (xs): Smartphone (portrait - retrato) */
+@media (min-width: 0px) {
+    nav{
+        padding: 0;
+        padding-left: 1rem;
+    }
+
+    .drop-content{
+        background-color: var(--cor-navbar);
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .drop-menu{
+        display: block;
+    }
+
+    /* header  */
+    .title{
+        font-size: 1.8rem;
+        padding: 1rem;
+    }
+
+    .emphasis{
+        padding: 0.8rem;
+        flex-direction: column;
+    }
+
+    /* sobre  */
+    .about{
+        flex-direction: column;
+    }
+
+    .about p{
+        font-size: small;
+    }
+
+    .info-about{
+        align-items: center;
+    }
+
+    .fotos-about{
+        margin-top: 3rem;
+    }
+
+    .foto{
+        width: 100%;
+    }
+
+    /* modalidades  */
+    .group-modalities{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    /* avaliações  */
+    .reviews{
+        width: 100%;
+    }
+
+    /* carrosel  */
+    .carousel{
+        padding: 0;
+    }
+
+    /* horarios  */
+    .schedules{
+        margin: 0;
+        padding: .5rem;
+        font-size: small;
+    }
+
+    .x{
+        font-size: small;
+    }
+
+    /* professores  */
+    .group-teachers{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .group-teachers a{
+        text-decoration: none;
+    }
+
+    .group-teachers p{
+        font-size: small;
+    }
+
+    .group-teachers a span{
+        font-size: medium;
+        transition: .3s ease;
+    }
+
+    .group-teachers a span:hover{
+        color: var(--cor-destaque);
+    }
+
+    .self-teacher{
+        width: 8rem;
+        height: 12rem;
+    }
+
+    .contact{
+        font-size: 1.5rem;
+        color: var(--cor-1);
+        transition: .3s ease;
+    }
+
+    .contact:hover{
+        color: var(--cor-agendar);
+    }
+
+    .zap{
+        width: 2rem;
+    }
+
+    /* footer  */
+    footer{
+        padding: 2rem;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .enterprise{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .social-network{
+        padding-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .social-network a{
+        margin-right: 5rem;
+    }
+
+}
+
+/* Small (sm): Smartphone (landscap - paisagem) */
+@media (min-width: 576px) {
+    section{
+        padding: 6rem 4rem;
+    }
+
+    .group-teachers{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    .card-teacher{
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .self-teacher{
+        height: 18rem;
+        width: 16rem;
+    }
+
+    .card-teacher p{
+        padding: 1rem;
+    } 
+}
+
+/* Medium (md): Tablet  */
+@media (min-width: 768px) {
+    section{
+        padding: 6rem 2rem;
+    }
+
+    emphasis{
+        padding: 0.8rem 3rem;
+    }
+
+    .foto{
+        width: calc(50% - 0.5rem);
+    }
+
+    .botao-topo{
+        display: none !important;
+    }
+
+    .about p{
+        font-size: medium;
+    }
+
+    .group-modalities{
+        padding: 0;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 3rem 1rem;
+    }
+
+    .group-teachers{
+        padding: 0;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 3rem 1rem;
+    }
+
+    .card-teacher{
+        display: flex;
+        padding: 1rem;
+    }
+
+    .self-teacher{
+        margin: 1rem;
+        width: 100%;
+    }
+
+    footer{
+        padding: 2rem 6rem;
+    }
+}
+
+/* Large (lg): Notebook  */
+@media (min-width: 992px) {
+    nav{
+        padding: 0.6rem 3rem;
+    }
+
+    .menu{
+        display: block;
+    }
+
+    .drop-menu{
+        display: none;
+    }
+
+    .title{
+        font-size: 2rem;
+    }
+
+    .emphasis{
+        padding: 0.8rem 3rem;
+    }
+
+    section{
+        padding: 6rem 3rem;
+    }
+
+    .about{
+        flex-direction: row;
+    }
+
+    .info-about{
+        padding: 3rem;
+    }
+
+    .foto{
+        width: 100%;
+    }
+
+    .reviews{
+        width: 75%;
+    }
+
+    .schedules{
+        font-size: large;
+    }
+
+    .x{
+        font-size: large;
+    }
+
+    .group-teachers{
+        grid-template-columns: 50% 50%;
+    }
+
+    .card-teacher{
+        display: flex;
+        align-items: start;
+        flex-direction: row;
+    }
+
+    .self-teacher{
+        width: 13rem;
+        margin-right: 0;
+    }
+
+    .card-teacher div{
+        display: flex;
+        align-items: start;
+        padding-left: .5rem;
+    }
+
+    .card-teacher p{
+        margin-left: 0;
+        padding-left: 0;
+        
+    }
+
+    footer{
+        flex-direction: row;
+    }
+
+    footer h3{
+        margin-top: 0;
+    }
+
+    .enterprise{
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 1rem;        
+    }
+
+    .map{
+        margin-right: 1rem;
+    }
+}
+
+/* Extra Large (xl): Desktop  */
+@media (min-width: 1024px) {
+    .foto{
+        width: calc(50% - 0.5rem);
+    }
+
+    .about{
+        flex-direction: column;
+        grid-template-columns: auto auto;
+    }
+
+    .about p{
+        font-size: large;
+    }
+
+    .group-modalities{
+        grid-template-columns: auto auto auto;   
+    }
+
+    .carousel{
+        padding: 0 5rem;
+    }
+
+    .schedules{
+        padding: 2rem;
+        font-size: x-large;
+    }
+
+    .x{
+        font-size: x-large;
+    }
+
+    .group-teachers{
+        grid-template-columns: 33% 33% 33%;
+    }
+
+    .card-teacher{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .self-teacher{
+        width: 100%;
+    }
+
+    .card-teacher div{
+        display: flex;
+        align-items: center;
+    }
+
+    .card-teacher p{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .map{
+        padding-left: 4rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .foto{
+        width: calc(50% - 0.5rem);
+    }
+
+    .about{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .about p{
+        font-size: large;
+    }
+
+    .group-modalities{
+        grid-template-columns: auto auto auto;   
+    }
+
+    .carousel{
+        padding: 0 5rem;
+    }
+
+    .schedules{
+        padding: 2rem;
+        font-size: x-large;
+    }
+
+    .x{
+        font-size: x-large;
+    }
+
+    .group-teachers{
+        grid-template-columns: 33% 33% 33%;
+    }
+
+    .card-teacher{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .self-teacher{
+        width: 100%;
+    }
+
+    .card-teacher div{
+        display: flex;
+        align-items: center;
+    }
+
+    .card-teacher p{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .map{
+        padding-left: 4rem;
+    }
+}
