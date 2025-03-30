@@ -168,13 +168,18 @@ section{
     width: 20px;
     height: 30px;
     position: fixed;
-    bottom: 20px;
+    bottom: 55px;
     right: 20px;
     background-color: var(--cor-1);
+    color: var(--cor-rodape);
+    border: none;
     border-radius: 8%;
     text-decoration: none;
-    padding-left: 4px;
     font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: var(--sombra);
+    transform: rotate(0deg);
 }
 
 .botao-topo:hover{
